@@ -8,7 +8,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 link_directories("vendor/SFML/lib")
 
-add_executable(MrClock Main.cpp)
+file(GLOB Cs "*.h" "*.cpp")
+add_executable(MrClock ${Cs})
 
 target_link_libraries(MrClock debug sfml-graphics-d.lib optimized sfml-graphics.lib)
 target_link_libraries(MrClock debug sfml-window-d.lib optimized sfml-window.lib)
